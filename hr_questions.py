@@ -1,15 +1,19 @@
 hr_question_database = {
     'general': [
         "Tell me about yourself.",
+        "What does success mean to you?",
         "Why are you interested in this position?",
         "What are your strengths and weaknesses?",
         "Where do you see yourself in 5 years?",
-        "Why are you looking to leave your current job?"
+        "What are your hobbies and interests?",
+        "Do you have any questions for me?",
+        "Would you like to relocate or travel for the company?",
+        "Assume you are hired, then how long would you expect to work for us?"
     ],
     'experience': [
         "Describe a challenging situation you faced and how you overcame it.",
         "What is your greatest professional achievement?",
-        "How do you handle conflicts or difficult coworkers?",
+        "How do you handle conflicts or difficulties with coworkers?",
         "Give an example of a time when you had to adapt to a new situation.",
         "Describe a time when you had to make a difficult decision."
     ],
@@ -23,6 +27,7 @@ hr_question_database = {
     'management': [
         "How would you motivate your team members?",
         "Describe your leadership style.",
+        "What is the difference between smart work and hard work?",
         "How do you handle performance issues with team members?",
         "How do you prioritize tasks and manage your time effectively?",
         "How do you handle criticism or feedback?"
