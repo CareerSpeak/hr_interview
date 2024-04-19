@@ -1,38 +1,10 @@
-hr_question_database = {
-    'general': [
-        "Tell me about yourself.",
-        "What does success mean to you?",
-        "Why are you interested in this position?",
-        "What are your strengths and weaknesses?",
-        "Where do you see yourself in 5 years?",
-        "What are your hobbies and interests?",
-        "Do you have any questions for me?",
-        "Would you like to relocate or travel for the company?",
-        "Assume you are hired, then how long would you expect to work for us?"
-    ],
-    'experience': [
-        "Describe a challenging situation you faced and how you overcame it.",
-        "What is your greatest professional achievement?",
-        "How do you handle conflicts or difficulties with coworkers?",
-        "Give an example of a time when you had to adapt to a new situation.",
-        "Describe a time when you had to make a difficult decision."
-    ],
-    'motivation': [
-        "What motivates you?",
-        "What interests you about our company/industry?",
-        "What are your career goals?",
-        "Why should we hire you?",
-        "What do you know about our company culture?"
-    ],
-    'management': [
-        "How would you motivate your team members?",
-        "Describe your leadership style.",
-        "What is the difference between smart work and hard work?",
-        "How do you handle performance issues with team members?",
-        "How do you prioritize tasks and manage your time effectively?",
-        "How do you handle criticism or feedback?"
-    ]
-}
+import json
+
+hr_question_database = {}
+
+with open('questions.json') as questions:
+    hr_question_database = json.load(questions)
+
 
 def generate_questions(categories):
     questions = []
@@ -40,6 +12,7 @@ def generate_questions(categories):
         if category in hr_question_database:
             questions.extend(hr_question_database[category])
     return questions
+
 
 print("Categories of HR questions available:")
 category_list = list(hr_question_database.keys())
@@ -73,5 +46,3 @@ while True:
     print("\nCommon HR Interview Questions:")
     for question in questions:
         print("- " + question)
-
-    
