@@ -2,19 +2,18 @@ import json
 import os
 import random
 
-question_database: dict[str, list[str]] = {}
-
-with open('questions.json') as questions:
-    question_database = json.load(questions)
-
 
 def select_questions():
+    question_database: dict[str, list[str]] = {}
+    with open('questions.json') as questions:
+        question_database = json.load(questions)
     selected_questions = {}
     for category in question_database.keys():
         # Selecting 2 random questions per category from `questions database`
         selected_questions.update(
             {category: random.sample(question_database[category], 3)}
         )
+    return selected_questions
 
 
 def clear_screen():
