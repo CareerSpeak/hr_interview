@@ -2,22 +2,26 @@ import json
 import os
 import random
 
-
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
 question_database: dict[str, list[str]] = {}
 
 with open('questions.json') as questions:
     question_database = json.load(questions)
 
-if __name__ == '__main__':
+
+def select_questions():
     selected_questions = {}
     for category in question_database.keys():
         # Selecting 2 random questions per category from `questions database`
         selected_questions.update(
-            {category: random.sample(question_database[category], 3)})
+            {category: random.sample(question_database[category], 3)}
+        )
+
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+if __name__ == '__main__':
     previous_output = ''
     while True:
         clear_screen()
